@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="inital-scale=1.0,width=device-width">
+	<title>EnVibe&copy;</title>
+	<link rel="stylesheet" href="css/app.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+
+</head>
+<body>
+	<nav>
+		<div class="left">
+			EnVibe
+		</div>
+		<div class="right">
+			<ul>
+				<li><a href="#nav">Home</a></li>
+				<li><a href="#emo">Emotional Analysis</a></li>
+				<li><a href="#phys">Physical Abuse</a></li>
+				<li><a href="#curse">Curse Word Analysis</a></li>
+			</ul>
+		</div>
+	</nav>
+		<section class="hero"  id="nav">
+			<div class="centered">
+				<h1>Happiness<span>Panel</span></h1>
+				<p class="lead">
+					An in depth analysis of your child's environment, which might have affected the current mental and emotional state.<br/> Please read our <a href="#0">Privacy Policy</a> on how this data is stored.
+				</p>
+			</div>
+		</section>
+		<section class="data_section" id="emo">
+			<h1>
+				Emotional Analysis
+			</h1>
+			<br><br>
+			<canvas id="ctx_one" width="700" height="350" style="width: 700; height: 350; margin-right: 110px;"></canvas>
+			<canvas id="ctx_two" width="700" height="350" style="width: 700; height: 350;"></canvas>
+		</section>
+		<section class="data_section" id="phys">
+						<h1>
+				Physical Abuse
+			</h1>
+			<br><br>
+			<canvas id="ctx_three" width="700" height="350" style="width: 700; height: 350; margin-right: 110px;"></canvas>
+			<div id="ctx_four" width="700" height="350" style="width: 700; height: 350;"><h1>EnVibe detected <span style="font-size:2.5em; margin-left: 8px; margin-right: 8px; ">8</span> falls over the span of 1 day.</h1></div>
+		</section>
+		<section class="data_section" id="curse">
+						<h1>
+				Curse Word Analysis
+			</h1>
+			<br><br>
+			<canvas id="ctx_five" width="700" height="350" style="width: 700; height: 350; margin-right: 110px;"></canvas>
+			<div id="ctx_six" width="700" height="350" style="width: 700; height: 350;"><h1>EnVibe detected <span style="font-size:2.5em; margin-left: 8px; margin-right: 8px; ">20</span> spoken curse words over the span of 1 day.</h1>
+			</div>
+		</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+$('a[href*="#"]')
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 300, function() {
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { 
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); 
+            $target.focus(); 
+          };
+        });
+      }
+    }
+  });
+		</script>
+		<script>
+var ctx = document.getElementById("ctx_one");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["7 AM", "8 AM"],
+        datasets: [{
+            label: 'Happy environment',
+            data: [20, 50, 70, 20, 10, 40, 80],
+            backgroundColor: [
+                'rgba(1, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(1,99,132,1)'
+            ],
+            borderWidth: 1
+        },{
+            label: 'Sad environment',
+            data: [10, 20, 5, 65, 90, 45, 5],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)'
+            ],
+            borderWidth: 1
+        },
+        ]
+    },
+    options: {
+    	responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+<script>
+	var ctx = document.getElementById("ctx_two");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM"],
+        datasets: [{
+            label: 'Happiness',
+            data: [40, 50, 65, 10, 2, 25, 60],
+            backgroundColor: [
+                'rgba(1, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(1,99,132,1)'
+            ],
+            borderWidth: 1
+        },{
+            label: 'Sadness',
+            data: [15, 25, 5, 55, 80, 40, 10],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)'
+            ],
+            borderWidth: 1
+        },{
+            label: 'Angry',
+            data: [5, 10, 30, 20, 60, 70, 20],
+            backgroundColor: [
+                'rgba(255, 149, 50, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)'
+            ],
+            borderWidth: 1
+        },{
+            label: 'Anxiety',
+            data: [20, 30, 15, 5, 0, 15, 40],
+            backgroundColor: [
+                'rgba(1, 40, 180, 0.2)'
+            ],
+            borderColor: [
+                'rgba(1,99,132,1)'
+            ],
+            borderWidth: 1
+        },{
+            label: 'Neutral',
+            data: [11, 33, 11, 22, 11, 11, 20],
+            backgroundColor: [
+                'rgba(99, 150, 50, 0.2)'
+            ],
+            borderColor: [
+                'rgba(1,99,132,1)'
+            ],
+            borderWidth: 1
+        },
+        ]
+    },
+    options: {
+    	responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+</script>
+<script>
+	var ctx = document.getElementById("ctx_three");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM"],
+        datasets: [{
+            label: 'Falls detected',
+            data: [0, 0, 0, 2, 5, 1, 0],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)'
+
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)'
+            ],
+            borderWidth: 1
+        },
+        ]
+    },
+    options: {
+    	responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+<script>
+	var ctx = document.getElementById("ctx_five");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM"],
+        datasets: [{
+            label: 'Curse words detected',
+            data: [1, 1, 2, 6, 7, 2, 1],
+            backgroundColor: [
+                'rgba(1, 40, 180, 0.2)'
+            ],
+            borderColor: [
+                'rgba(1,99,132,1)'
+            ],
+            borderWidth: 1
+        },
+        ]
+    },
+    options: {
+    	responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+<!-- 		<script>
+			var ctx_one = document.getElementbyId('ctx_one');
+			var chart_one = new Chart(ctx_one, {
+
+			});
+		</script> -->
+</body>
+</html>

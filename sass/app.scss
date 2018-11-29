@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; 
+	transition: all .35s ease-in-out;
+	font-weight: normal;
+	outline: none;
+	-webkit-tap-highlight: none;
+}
+
+html,
+body {
+	font-size: 100%;
+	font-smoothing: geometricPrecision;
+}
+
+body {
+	font-family: Raleway;
+}
+
+nav {
+	border-bottom: 5px solid rgba(#2ecc71, 0.3);
+	width: 100%;
+	padding: 30px 20px 30px 20px;
+	background: #fff;
+	position: fixed;
+	.left {
+		width: 50%;
+		float: left;
+		font-size: 1.2rem;
+		font-weight: 700 !important;
+	}
+	.right{
+		vertical-align: middle;
+		width: 50%;
+		float: left;
+		text-align: right;
+		ul {
+			li {
+				display: inline;
+				list-style-type: none;
+				a {
+					font-size: 1.2rem;
+					text-decoration: none;
+					margin-right: 20px;
+					color: lighten(#222, 0%);
+					padding-bottom: 27px;
+					border-bottom: 3px solid rgba(#2ecc71, 0);
+					&:hover {
+						color: #2ecc71;
+						border-bottom: 3px solid rgba(#2ecc71, 0.99);
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.hero {
+	height: 60vh;
+	width: 100%;
+	background: url(bg.jpg) center center no-repeat fixed;
+	background-size: cover;
+	display: table;
+	.centered {
+		display: table-cell;
+		width: 100%;
+		padding: 0 0 0 10rem;
+		vertical-align: middle;
+		background: rgba(#000, 0.8);
+		h1 {
+			margin-bottom: 10px;
+			font-size: 3rem;
+			color: #fff;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			span {
+				color: #2ecc71;
+				border-bottom: 3px solid rgba(#2ecc71, 0.2);
+			}
+			font-weight: 700;
+		}
+		.lead {
+			a {
+				color: rgba(#fff, 0.7);;
+				text-decoration: none;
+				border-bottom: 2px solid rgba(#fff, 0);
+				padding-bottom: 5px;	
+				&:hover {
+					border-bottom: 2px solid rgba(#fff, 0.5);
+					color: rgba(#fff, 0.9);
+
+				}
+			}
+			width: 40%;
+			font-size: 1.3rem;
+			color: rgba(#fff, 0.5); 
+			line-height: 1.43333;
+		}
+	}
+}
+
+section.data_section {
+	padding: 3rem 10rem;
+	width: 100%;
+	canvas {
+		float: left;
+	}
+	margin-bottom: 360px;
+}
+section#phys {
+	background: #f6f6f6;
+	height: 60vh;
+	margin-bottom: 0 !important;
+}

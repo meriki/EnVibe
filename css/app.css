@@ -1,0 +1,99 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all .35s ease-in-out;
+  -o-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
+  font-weight: normal;
+  outline: none;
+  -webkit-tap-highlight: none; }
+
+html,
+body {
+  font-size: 100%;
+  font-smoothing: geometricPrecision; }
+
+body {
+  font-family: Raleway; }
+
+nav {
+  border-bottom: 5px solid rgba(46, 204, 113, 0.3);
+  width: 100%;
+  padding: 30px 20px 30px 20px;
+  background: #fff;
+  position: fixed; }
+  nav .left {
+    width: 50%;
+    float: left;
+    font-size: 1.2rem;
+    font-weight: 700 !important; }
+  nav .right {
+    vertical-align: middle;
+    width: 50%;
+    float: left;
+    text-align: right; }
+    nav .right ul li {
+      display: inline;
+      list-style-type: none; }
+      nav .right ul li a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        margin-right: 20px;
+        color: #222222;
+        padding-bottom: 27px;
+        border-bottom: 3px solid rgba(46, 204, 113, 0); }
+        nav .right ul li a:hover {
+          color: #2ecc71;
+          border-bottom: 3px solid rgba(46, 204, 113, 0.99); }
+
+.hero {
+  height: 60vh;
+  width: 100%;
+  background: url(bg.jpg) center center no-repeat fixed;
+  background-size: cover;
+  display: table; }
+  .hero .centered {
+    display: table-cell;
+    width: 100%;
+    padding: 0 0 0 10rem;
+    vertical-align: middle;
+    background: rgba(0, 0, 0, 0.8); }
+    .hero .centered h1 {
+      margin-bottom: 10px;
+      font-size: 3rem;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700; }
+      .hero .centered h1 span {
+        color: #2ecc71;
+        border-bottom: 3px solid rgba(46, 204, 113, 0.2); }
+    .hero .centered .lead {
+      width: 40%;
+      font-size: 1.3rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.43333; }
+      .hero .centered .lead a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0);
+        padding-bottom: 5px; }
+        .hero .centered .lead a:hover {
+          border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+          color: rgba(255, 255, 255, 0.9); }
+
+section.data_section {
+  padding: 3rem 10rem;
+  width: 100%;
+  margin-bottom: 360px; }
+  section.data_section canvas {
+    float: left; }
+
+section#phys {
+  background: #f6f6f6;
+  height: 60vh;
+  margin-bottom: 0 !important; }
