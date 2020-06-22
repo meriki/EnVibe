@@ -1,7 +1,7 @@
 # EnVibe
 # Analyse the environmental vibe around a child using a novel wearable to facilitate a healthy childhood
 
-Formore information and a video check out this site link: https://sites.google.com/iiitd.ac.in/en-vibe/home
+For more information and a video check out this site link: https://sites.google.com/iiitd.ac.in/en-vibe/home
 
 ### Description of project files
 fall.py is the fall detection code <br />
