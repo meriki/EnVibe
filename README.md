@@ -5,5 +5,5 @@ Formore information and a video check out this site link: https://sites.google.c
 
 ### Description of project files
 fall.py is the fall detection code <br />
-project.py is the audio analysis code <br/>
+project.py is the ML audio analysis code <br/>
 index.html is the webpage that has the happiness panel where the results of the audio and all analysis are shown
